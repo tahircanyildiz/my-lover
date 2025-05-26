@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.title {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    z-index: 100;
+    animation: rainbow 3s ease-in-out infinite;
+}
+
+@keyframes rainbow {
+    0% { color: #ff6b9d; }
+    25% { color: #ff8a80; }
+    50% { color: #f8bbd9; }
+    75% { color: #e1bee7; }
+    100% { color: #ff6b9d; }
+}
+
+.subtitle {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    z-index: 100;
+    text-align: center;
+}
+
+.heart-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 50;
+    font-size: 20px;
+}
+
+.flower-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 50;
+    font-size: 25px;
+}
+
+.click-instruction {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    z-index: 100;
+    animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.5; }
+}
+
+.floating-heart {
+    position: fixed;
+    font-size: 40px;
+    color: #ff1744;
+    pointer-events: none;
+    z-index: 30;
+}
+
+.floating-flower {
+    position: fixed;
+    font-size: 35px;
+    pointer-events: none;
+    z-index: 30;
+}
