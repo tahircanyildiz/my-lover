@@ -6,19 +6,23 @@ body {
     height: 100vh;
     overflow: hidden;
     cursor: pointer;
+    touch-action: manipulation; /* Touch için optimize et */
 }
 
 .title {
     position: fixed;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 5rem;
+    font-size: clamp(3rem, 8vw, 5rem); /* Responsive font size */
     font-weight: bold;
     color: #fff;
     text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
     z-index: 100;
     animation: rainbow 3s ease-in-out infinite;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
 }
 
 @keyframes rainbow {
@@ -34,37 +38,45 @@ body {
     top: 35%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2.5rem;
+    font-size: clamp(1.2rem, 4vw, 2.5rem); /* Responsive font size */
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
     z-index: 100;
     text-align: center;
+    width: 90%;
+    max-width: 500px;
+    line-height: 1.3;
+    padding: 0 10px;
 }
 
 .heart-particle {
     position: fixed;
     pointer-events: none;
     z-index: 50;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
 }
 
 .flower-particle {
     position: fixed;
     pointer-events: none;
     z-index: 50;
-    font-size: 25px;
+    font-size: clamp(20px, 4vw, 25px);
 }
 
 .click-instruction {
     position: fixed;
-    bottom: 10%;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.8rem;
+    font-size: clamp(1rem, 3vw, 1.8rem); /* Responsive font size */
     color: #fff;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
     z-index: 100;
     animation: blink 2s ease-in-out infinite;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    padding: 0 10px;
 }
 
 @keyframes blink {
@@ -74,7 +86,7 @@ body {
 
 .floating-heart {
     position: fixed;
-    font-size: 40px;
+    font-size: clamp(30px, 6vw, 40px);
     color: #ff1744;
     pointer-events: none;
     z-index: 30;
@@ -82,7 +94,80 @@ body {
 
 .floating-flower {
     position: fixed;
-    font-size: 35px;
+    font-size: clamp(25px, 5vw, 35px);
     pointer-events: none;
     z-index: 30;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .title {
+        top: 12%;
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+    
+    .subtitle {
+        top: 30%;
+        font-size: clamp(1rem, 5vw, 2rem);
+        line-height: 1.2;
+    }
+    
+    .click-instruction {
+        bottom: 20%;
+        font-size: clamp(0.9rem, 4vw, 1.5rem);
+    }
+    
+    .heart-particle {
+        font-size: clamp(14px, 4vw, 18px);
+    }
+    
+    .flower-particle {
+        font-size: clamp(18px, 5vw, 22px);
+    }
+    
+    .floating-heart {
+        font-size: clamp(25px, 7vw, 35px);
+    }
+    
+    .floating-flower {
+        font-size: clamp(20px, 6vw, 30px);
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .title {
+        top: 10%;
+        font-size: clamp(2rem, 12vw, 3.5rem);
+    }
+    
+    .subtitle {
+        top: 28%;
+        font-size: clamp(0.9rem, 6vw, 1.8rem);
+        padding: 0 15px;
+    }
+    
+    .click-instruction {
+        bottom: 25%;
+        font-size: clamp(0.8rem, 5vw, 1.3rem);
+        padding: 0 15px;
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .title {
+        top: 8%;
+        font-size: clamp(1.8rem, 6vh, 3rem);
+    }
+    
+    .subtitle {
+        top: 25%;
+        font-size: clamp(0.8rem, 4vh, 1.5rem);
+    }
+    
+    .click-instruction {
+        bottom: 10%;
+        font-size: clamp(0.7rem, 3vh, 1.2rem);
+    }
 }
